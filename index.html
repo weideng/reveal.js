@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Ramble of JavaScript</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,11 +41,99 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>Ramble of JavaScript</h1>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="https://github.com/weideng">Wei Deng</a>  </small>
 					</p>
+				</section>
+
+				<section>
+					<h2>A brief history of Javascript</h3>
+                    <p>Created by Brendan Eich, in May 1995</p>
+                    <p>1996 - 1997, ECMAScript 1</p>
+                    <p>1998, ECMAScript 2</p>
+                    <p>1999, ECMAScript 3</p>
+                    <p>2007 - 2008, ECMAScript 4</p>
+                    <p>2007, Microsoft ECMAScript 3.1</p>
+                    <p>2009, rename ECMAScript 3.1 to ECMAScript 5</p>
+				</section>
+
+				<section>
+					<h2>A brief history of Javascript</h3>
+                    <p>2005 - present  Ajax, YUI, jquery, Angular, React...</p>
+                    <p>2009, Node.js</p>
+				</section>
+
+				<section>
+                  <h2>Frameworks</h2>
+                  <ul>
+                    <li>Bootstrap、jQuery UI、jQuery Mobile、Sencha ExtJS、Dojo、Dojo Mobile、Mootools、Foundation、Kissy
+                    </li>
+                    <li>Jquery</li>
+                    <li>Angular, React</li>
+                  </ul>
+				</section>
+
+				<section>
+                  <h2>Why Use Frameworks?</h2>
+					<section id="fragments">
+						<p class="fragment">Cross Browsers</p>
+						<p class="fragment">Easy to learn</p>
+						<p class="fragment">Uniform Style</p>
+				    </section>
+				</section>
+
+				<section>
+                  <h2>Web Components</h2>
+						<p class="fragment">Jquery UI</p>
+						<p class="fragment">HTML + CSS widget</p>
+				</section>
+
+				<section class="present">
+                  <h2>Web components</h2>
+                  <p style="background-color:#3f3f3f; font-size: 28px;">
+<span>var XFooButtonPrototype =
+Object.create(HTMLButtonElement.prototype);</span><br>
+<span style="margin-left: -260px;">XFooButtonPrototype.createdCallback = function() {</span><br>
+<span style="margin-left: -330px;">  this.textContent = "I'm an x-foo button!";</span></br>
+<span style="margin-left: -850px;">};</span> <br>
+
+<span style="margin-left: -160px;">var XFooButton = document.registerElement('x-foo-button', {</span><br>
+<span style="margin-left: -400px;">  prototype: XFooButtonPrototype,</span><br>
+<span style="margin-left: -600px;">  extends: 'button'</span><br>
+<span style="margin-left: -840px;"}  >);</span> <br><br>
+<span style="margin-left: -500px;">&lt;x-foo-button&gt;&lt;/x-foo-button&gt;</span>
+</p>
+						<a href="http://webcomponents.org/">webcomponentsjs</a>
+				</section>
+
+				<section>
+                  <h2>Performance optimization</h2>
+                  <p>Make Fewer HTTP Requests</p>
+                  <p>CDN</p>
+                  <p>Add an Expires Header</p>
+                  <p>Compress Files</p>
+                  <p>Put css at the top and js at the bottom</p>
+				</section>
+
+				<section>
+                  <h2>Performance optimization</h2>
+                  <a
+                  href="http://shop.oreilly.com/product/9780596529307.do">High
+                  Performance Web Sites</a> <br>
+                  <a href="http://shop.oreilly.com/product/9780596522315.do">Even Faster Web Sites</a>
+				</section>
+
+				<section>
+                  <h2>Web App building tools</h2>
+                    <p>Grunt</p>
+                    <p>Gulp</p>
+				</section>
+
+				<section>
+                  <h2>Some cool techniques</h2>
+                    <p>asm.js</p>
+                    <p>WebAssembly</p>
 				</section>
 
 				<section>
