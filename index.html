@@ -48,83 +48,196 @@
         <section>
           <h2>Git简介</h2>
           <p>作者: Linus Torvalds</p>
+        </section>
+
+        <section>
+          <h2>Git入门-安装</h2>
           <p>Git 安装</p>
         </section>
 
         <section>
-          <h2>Git配置</h2>
-          <p>Git 配置</p>
-        </section>
-
-        <section>
-                  <h2>Why Use Frameworks?</h2>
-          <section id="fragments">
-            <p class="fragment">Cross Browsers</p>
-            <p class="fragment">Easy to learn</p>
-            <p class="fragment">Uniform Style</p>
-            </section>
-        </section>
-
-        <section>
-                  <h2>Web Components</h2>
-            <p class="fragment">HTML + CSS widget</p>
-            <p class="fragment">Templates</p>
-            <p class="fragment">Jquery UI</p>
-        </section>
-
-        <section>
-                    <h2>Web components</h2>
+          <h2>Git入门－配置</h2>
           <pre><code class="hljs" data-trim contenteditable>
-var XFooButtonPrototype = Object.create(HTMLButtonElement.prototype);
-
-XFooButtonPrototype.createdCallback = function() {
-  this.textContent = "I'm an x-foo button!";
-};
-
-var XFooButton = document.registerElement('x-foo-button', {
-  prototype: XFooButtonPrototype,
-  extends: 'button'
-});
-
-&lt;x-foo-button&gt;&lt;/x-foo-button&gt;
+$ git config --global user.name "deng wei"
+$ git config --global user.email "dengwei@wecash.net"
           </code></pre>
-            <p><a href="http://webcomponents.org/">webcomponentsjs</a></p>
-        </section>
-
-
-        <section>
-                  <h2>Performance optimization</h2>
-                  <p>Make Fewer HTTP Requests</p>
-                  <p>CDN</p>
-                  <p>Add an Expires Header</p>
-                  <p>Compress Files</p>
-                  <p>Put css at the top and js at the bottom</p>
+          <p><small>这个命令值得深入研究</small></p>
         </section>
 
         <section>
-                  <h2>Performance optimization</h2>
-                  <a
-                  href="http://shop.oreilly.com/product/9780596529307.do">High
-                  Performance Web Sites</a> <br>
-                  <a href="http://shop.oreilly.com/product/9780596522315.do">Even Faster Web Sites</a>
+          <h2>Git入门－项目初始化</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git clone git@github.com:weideng/reveal.js.git
+$ git init .
+          </code></pre>
         </section>
 
         <section>
-                  <h2>Web App building tools</h2>
-                    <p>Grunt</p>
-                    <p>Gulp</p>
+          <h2>Git入门－添加文件</h2>
+          <p>创建新文件/修改文件README</p>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git add README
+          </code></pre>
+          <p>新文件加入跟踪／跟踪版本变化</p>
         </section>
 
         <section>
-                  <h2>Some cool techniques</h2>
-                    <p>asm.js</p>
-                    <p>WebAssembly</p>
+          <h2>Git入门－提交</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git commit -m "改动内容描述"
+          </code></pre>
+          <p><small>本地单分支仓库，至此一个工作循环完成</small></p>
         </section>
 
+        <section>
+          <h2>Git入门－推送</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git push origin master:master
+          </code></pre>
+          <p><small>远程个人单分支仓库，至此一个工作循环完成</small></p>
+        </section>
 
+        <section>
+          <h2>Git入门－更新后推送</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git fetch origin && git rebase origin/master (1)
+$ git pull (2)
+$ git push origin master:master (3)
+          </code></pre>
+          <p><small>1和2选择其中一个，3都要运行</small></p>
+          <p><small>远程多人协同单分支仓库，至此一个工作循环完成</small></p>
+        </section>
 
+        <section>
+          <h2>Git入门－问题来了</h2>
+          <p>如何一次添加多个文件？git add 多次？git add . ?</p>
+          <p>改动了10个文件，如何快速的只提交其中的9个？git add . && git reset
+          HEAD notWantedFileName</p>
+          <p>如何删除一个已跟踪文件？git rm 要删除的文件名</p>
+          <p>一个文件修改了2个地方，如何只提交其中的一处改动？</p>
+        </section>
 
+        <section>
+          <h2>Git入门－文件区</h2>
+          <img src="imgs/1.png">
+          <p><small>深刻理解文件所在区域的概念灰常重要:)</small></p>
+        </section>
 
+        <section>
+          <h2>Git入门－文件区转换</h2>
+          <p>暂存区文件转到代码库／索引区？git commit</p>
+          <p>工作区文件转到暂存区？git add filename</p>
+          <p>暂存区文件转换到工作区？git reset HEAD filename</p>
+          <p>工作区文件修改后，恢复成修改前的状态，即从代码区到工作区？git
+          checkout filename</p>
+        </section>
+
+        <section>
+          <h2>Git入门－文件状态</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git status
+          </code></pre>
+          <p><small>此命令是使用最频繁的，木有之一,灰常重要</small></p>
+          <p><small>我们通过此命令运行的结果来判断修改文件在哪个区</small></p>
+        </section>
+
+        <section>
+          <h2>Git入门－commit对象</h2>
+          <img src="imgs/2.png">
+          <p><small>commit对象是最重要的Git对象，这个要有深刻理解奥，亲～～</small></p>
+        </section>
+
+        <section>
+          <h2>Git入门－commit对象</h2>
+          <img src="imgs/3.png">
+          <p><small>提交历史轨迹</small></p>
+        </section>
+
+        <section>
+          <h2>Git入门－创建分支</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$ git checkout -b newbranch origin/master (1)
+$ git branch newbranch (2)
+          </code></pre>
+          <p><small>分支是git的必杀技</small></p>
+          <p><small>1和2都可以创建新分支</small></p>
+          <p><small>1中origin/master可以视为commit，可以用commit 前6位代替</small></p>
+          <p><small>2相当git checkout -b newbranch HEAD</small></p>
+        </section>
+
+        <section>
+          <h2>Git入门－HEAD变量</h2>
+          <p><small>指向当前分支最后的commit</small></p>
+        </section>
+
+        <section>
+          <h2>Git入门－分支合并</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$git merge (1)
+$git rebase somebranch(2)
+          </code></pre>
+          <p><small>merge会产生一个单独的commit，记录merge这个动作</small></p>
+          <p><small>rebase会很干净, 不过长期分支之间的合并要避免使用</small></p>
+        </section>
+
+        <section>
+          <h2>Git 入门级命令</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$git clone // 克隆项目
+$git config
+$git status // 查看文件状态、了解修改文件所在区
+$git checkout // 创建新分支/分支间切换,恢复修改文件等
+$git branch // 创建新分支/分支重命名等
+$git add // 添加未跟踪文件、添加已修改文件到暂存区，-a参数直接提交等
+$git rm
+$git diff (--cached) // 查看本次提交生成的patch
+$git reset (--hard) // 合并多次本地提交为一个提交
+$git commit
+$git fetch // 与git pull的区别？
+$git pull
+$git push
+$git log // 查看日志，通过时间，作者，邮箱等过滤
+$git clean -df // 清理工作区
+$git help
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Git 进阶级命令</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$git bisect // 定位引入bug的commit
+$git reflog // 查询更改纪录，恢复丢失数据
+$git format-patch // 生成patch
+$git apply // 打补丁patch
+$git blame // 兴师问罪
+$git show
+$git grep // 文件内容搜索
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Git 高级命令</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+$git cherry-pick // 挑选commit合并
+$git revert // 提交反转
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Git 小技巧</h2>
+          <p>查看命令行说明: git help command(config,branch...)</p>
+          <p>自动补全：git br,乔tab健，自动补全为 git branch</p>
+        </section>
+
+        <section>
+          <h2>Git 好习惯</h2>
+          <p>一次提交解决一个问题</p>
+          <p>commit之前运行git status检查一下想要提交的内容是否有遗漏</p>
+          <p>提交之前运行git diff --cached 检查一下更改内容</p>
+          <p>配置.gitignore文件，只跟踪源码文件，编译结果不该加入跟踪</p>
+          <p>临时分支提交前用rebase，长期分支之间合并用merge</p>
+          <p>大patch要分割成多个，方便code review</p>
+        </section>
       </div>
 
     </div>
