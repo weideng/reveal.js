@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Ramble of JavaScript</title>
+    <title>Git工具与工作流</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -133,12 +133,13 @@ $ git push origin master:master (3)
         </section>
 
         <section>
-          <h2>Git入门－文件状态</h2>
+          <h2>Git入门－仓库状态</h2>
           <pre><code class="hljs" data-trim contenteditable>
 $ git status
           </code></pre>
           <p><small>此命令是使用最频繁的，木有之一,灰常重要</small></p>
           <p><small>我们通过此命令运行的结果来判断修改文件在哪个区</small></p>
+          <p><small>提示下一步可以进行的动作</small></p>
         </section>
 
         <section>
@@ -211,6 +212,7 @@ $git format-patch // 生成patch
 $git apply // 打补丁patch
 $git blame // 兴师问罪
 $git show
+$git tag  // 打标签
 $git grep // 文件内容搜索
           </code></pre>
         </section>
@@ -226,7 +228,7 @@ $git revert // 提交反转
         <section>
           <h2>Git 小技巧</h2>
           <p>查看命令行说明: git help command(config,branch...)</p>
-          <p>自动补全：git br,乔tab健，自动补全为 git branch</p>
+          <p>自动补全：git br,敲tab键，自动补全为 git branch</p>
         </section>
 
         <section>
@@ -238,8 +240,17 @@ $git revert // 提交反转
           <p>临时分支提交前用rebase，长期分支之间合并用merge</p>
           <p>大patch要分割成多个，方便code review</p>
         </section>
-      </div>
 
+        <section>
+          <h2>Git 工作流</h2>
+          <a href="http://blog.jobbole.com/76857/">参考资料，尊重版权</a>
+        </section>
+
+        <section>
+          <h2>参考资料</h2>
+          <a href="http://git.oschina.net/progit/index.html">Pro Git</a>
+        </section>
+      </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
